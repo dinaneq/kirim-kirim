@@ -1,0 +1,31 @@
+name: Subscription Updater
+
+on:
+  push:
+    branches: [ "main" ]
+  schedule:
+    - cron: '*/90 * * * *'
+
+  #workflow_dispatch:
+jobs:
+  UpdateSub:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check The Code
+        uses: actions/checkout@v2
+      - name: Get Files
+        run: |
+          curl -o vmess -LJO https://raw.githubusercontent.com/lagzian/SS-Collector/main/SS/VM_TrinityBase
+          curl -o aktif.txt -LJO "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/actives.txt"
+          curl -o semua.txt -LJO "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/all.txt"
+      - name: send to telegram
+        run: |
+          python3 kirim.py
+      - name: Push And Update Files
+        run: |
+          git config --global user.name "dinaneq"
+          git config --global user.email "dinanda@5412.us.to"
+          git add .
+          git commit -m "Diperbarui pada - $(TZ='Asia/Jakarta' date '+%Y-%m-%d %H:%M:%S') WIB"
+          git push
