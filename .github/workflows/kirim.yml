@@ -27,7 +27,7 @@ jobs:
           curl -o vmess -LJO https://raw.githubusercontent.com/lagzian/SS-Collector/main/SS/VM_TrinityBase
           curl -o aktif_1.txt -LJO "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/actives.txt"
           curl -o semua.txt -LJO "https://raw.githubusercontent.com/MrMohebi/-proxies/row-url/all.txt"
-          curl -o aktif.txt -LJO https://5412.us.to/api/v1/sub?limit=90
+          curl -o aktif.txt -LJO https://5412.us.to/api/v1/sub?limit=30
           wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/ss_configs.txt
           wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/ssr_configs.txt
           wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/trojan_configs.txt
@@ -35,7 +35,7 @@ jobs:
           wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/vmess_configs.txt
       - name: send to telegram
         run: |
-          python3 kirim.py ${{ secrets.BOT }} ${{ secrets.ID }} && python3 iag.py ${{ secrets.BOT }} -1002292042831
+          python3 kirim.py ${{ secrets.BOT }} ${{ secrets.ID }} && python3 kirim.py ${{ secrets.BOT }} -1002292042831 && python3 iag.py ${{ secrets.BOT }} -1002292042831
       - name: Push And Update Files
         run: |
           git config --global user.name "dinaneq"
