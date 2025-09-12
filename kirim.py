@@ -19,7 +19,7 @@ def main():
         "ss_configs.txt",
         "ssr_configs.txt",    
         "trojan_configs.txt",
-        "vlees_configs.txt",
+        "vless_configs.txt",
         "vmess_configs.txt",
     )
     # From 2 to 10 items in one media group
