@@ -27,6 +27,11 @@ jobs:
           curl -o vmess -LJO https://raw.githubusercontent.com/lagzian/SS-Collector/main/SS/VM_TrinityBase
           curl -o aktif.txt -LJO "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/actives.txt"
           curl -o semua.txt -LJO "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/all.txt"
+          wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/ss_configs.txt
+          wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/ssr_configs.txt
+          wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/trojan_configs.txt
+          wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/vless_configs.txt
+          wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/vmess_configs.txt
       - name: send to telegram
         run: |
           python3 kirim.py ${{ secrets.BOT }} ${{ secrets.ID }} && python3 iag.py ${{ secrets.BOT }} -1002292042831
