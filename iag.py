@@ -31,7 +31,7 @@ def baca_file_dan_kirim_chunk(file_path, bot_token, channel_id, chunk_size=15):
                     time.sleep(1)
             
             if baris_chunk:
-                pesan = "".join(baris_chunk).strip()
+                pesan = "/n/n".join(baris_chunk).strip()
                 if pesan:
                     kirim_pesan_telegram(pesan, bot_token, channel_id)
     except FileNotFoundError:
