@@ -47,6 +47,6 @@ if __name__ == "__main__":
     # Ambil argumen dari baris perintah
     bot_token = sys.argv[1]
     channel_id = sys.argv[2]
-    file_path = "pesan.txt"  # Anda bisa mengubah ini jika nama file Anda berbeda
+    file_path = "aktif.txt"  # Anda bisa mengubah ini jika nama file Anda berbeda
 
     baca_file_dan_kirim_chunk(file_path, bot_token, channel_id)
