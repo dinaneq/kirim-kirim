@@ -24,14 +24,14 @@ def baca_file_dan_kirim_chunk(file_path, bot_token, channel_id, chunk_size=15):
             for i, baris in enumerate(file):
                 baris_chunk.append(baris)
                 if (i + 1) % chunk_size == 0:
-                    pesan = "".join(baris_chunk).strip()
+                    pesan = "\n\n".join(baris_chunk).strip()
                     if pesan:
                         kirim_pesan_telegram(pesan, bot_token, channel_id)
                     baris_chunk = []
                     time.sleep(1)
             
             if baris_chunk:
-                pesan = "/n/n".join(baris_chunk).strip()
+                pesan = "\n\n".join(baris_chunk).strip()
                 if pesan:
                     kirim_pesan_telegram(pesan, bot_token, channel_id)
     except FileNotFoundError:
