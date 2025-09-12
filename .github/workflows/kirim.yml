@@ -27,7 +27,7 @@ jobs:
           curl -o vmess -LJO https://raw.githubusercontent.com/lagzian/SS-Collector/main/SS/VM_TrinityBase
           curl -o aktif_1.txt -LJO "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/actives.txt"
           curl -o semua.txt -LJO "https://raw.githubusercontent.com/MrMohebi/-proxies/row-url/all.txt"
-          curl -o aktif.txt -LJO https://5412.us.to/api/v1/sub?limit=15
+          curl -o aktif.txt -LJO https://5412.us.to/api/v1/sub?limit=10
           wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/ss_configs.txt
           wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/ssr_configs.txt
           wget https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/trojan_configs.txt
