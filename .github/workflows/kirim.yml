@@ -29,7 +29,7 @@ jobs:
           curl -o semua.txt -LJO "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/all.txt"
       - name: send to telegram
         run: |
-          python3 kirim.py ${{ secrets.BOT }} ${{ secrets.ID }} && python3 kirim.py ${{ secrets.BOT }} -1002292042831
+          python3 kirim.py ${{ secrets.BOT }} ${{ secrets.ID }} && python3 iag.py ${{ secrets.BOT }} -1002292042831
       - name: Push And Update Files
         run: |
           git config --global user.name "dinaneq"
